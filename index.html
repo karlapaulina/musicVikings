@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!--FAVICON-->
-    <!-- <link rel="icon" type="image/png" href="assets/images/favicon-01.png" /> -->
     <!--META TAGS-->
     <meta charset="UTF-8" />
     <meta name="description" content="Music agency portfolio" />
@@ -13,10 +11,12 @@
     <title>Music Vikings</title>
     <!--STYLESHEETS-->
     <link href="./build/css/style.min.css" type="text/css" rel="stylesheet" />
-    <!-- <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css"
-    /> -->
+    <!--Animate CSS-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css"
+    />
+    <!--FontAwesome-->
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
@@ -27,48 +27,182 @@
   <body>
     <header>
       <nav>
-        <!-- <div class="kg-logo">
-                <a href="index.html" class="logo"
-                  ><img
-                    src="assets/images/kg_logo_dark.svg"
-                    alt="Karlotta Gonzalez home"
-                /></a>
-              </div>
-              <ul class="nav-links">
-                <li class="link-item">
-                  <a href="https://github.com/karlapaulina">github</a>
-                </li>
-                <li class="link-item"><a href="work.html">design</a></li>
-                <li class="link-item"><a href="about.html">about</a></li>
-                <li class="link-item"><a href="contact.html">contact</a></li>
-              </ul>
-              <div class="burger">
-                <button class="hamburger hamburger--spring" type="button">
-                  <span class="hamburger-box">
-                    <span class="hamburger-inner"></span>
-                  </span>
-                </button>
-              </div> -->
+        <div class="mv-logo">
+          <a href="index.html"
+            ><img
+              src="./assets/images/musicVikingsLogo.png"
+              alt="Music Vikings logo"
+          /></a>
+        </div>
+        <div class="nav-links">
+          <button class="menu-item first-li" id="homeBtn">
+            <i class="fas fa-home"></i>
+          </button>
+          <button class="menu-item">
+            <i class="fas fa-music"></i>
+          </button>
+          <button class="menu-item">
+            <i class="fas fa-shopping-cart"></i>
+          </button>
+          <button class="menu-item">
+            <i class="fab fa-facebook"></i>
+          </button>
+          <button class="menu-item">
+            <i class="fab fa-twitter"></i>
+          </button>
+          <button class="menu-item" id="contactBtn">
+            <i class="fas fa-envelope"></i>
+          </button>
+        </div>
+        <div class="burger">
+          <button class="hamburger hamburger--spring" type="button">
+            <span class="hamburger-box">
+              <span class="hamburger-inner"></span>
+            </span>
+          </button>
+        </div>
       </nav>
     </header>
-    <main>
-      <!-- <article class="dev-portfolio">
-            <figure class="dev-portfolio-first-item">
-              <a href="starts-with-me.html"
-                ><img
-                  src="assets/images/swmDesktopMockup.jpg"
-                  alt="Starts With Me website desktop mockup"
-              /></a>
-              <div class="middle">
-                <figcaption class="dev-portfolio-item-title">
-                  Starts with Me
-                </figcaption>
-              </div> -->
+    <main class="content-container">
+      <h1 class="pageTitle">Artist Roster</h1>
+      <article class="artist-grid">
+        <!--Using figure/figcaption elements for semantics and web accessibility-->
+        <figure>
+          <img
+            src="assets/images/artistExampleOne.jpg"
+            alt="Artist One seated on park bench with a guitar"
+            class="artistImg"
+          />
+          <figcaption class="artist-name">
+            Artist One
+          </figcaption>
+        </figure>
+
+        <figure>
+          <img
+            src="assets/images/artistExampleTwo.jpg"
+            alt="Artist Two holding a saxophone and leaning against blue wall"
+            class="artistImg"
+          />
+          <figcaption class="artist-name">
+            Artist Two
+          </figcaption>
+        </figure>
+
+        <figure>
+          <img
+            src="assets/images/artistExampleThree.jpg"
+            alt="Artist Three holding their individual intrustments in concrete outdoors"
+            class="artistImg"
+          />
+          <figcaption class="artist-name">
+            Artist Three
+          </figcaption>
+        </figure>
+
+        <figure>
+          <img
+            src="assets/images/artistExampleFour.jpg"
+            alt="Artist Four live in outdoor concert"
+            class="artistImg"
+          />
+          <figcaption class="artist-name">
+            Artist Four
+          </figcaption>
+        </figure>
+
+        <figure>
+          <img
+            src="assets/images/artistExampleFive.jpg"
+            alt="Artist Five live in concert"
+            class="artistImg"
+          />
+          <figcaption class="artist-name">
+            Artist Five
+          </figcaption>
+        </figure>
+
+        <figure>
+          <img
+            src="assets/images/artistExampleSix.jpg"
+            alt="Artist Six against white brick wall"
+            class="artistImg"
+          />
+          <figcaption class="artist-name">
+            Artist Six
+          </figcaption>
+        </figure>
+
+        <figure>
+          <img
+            src="assets/images/artistExampleSeven.jpg"
+            alt="Artist Seven live in concert"
+            class="artistImg"
+          />
+          <figcaption class="artist-name">
+            Artist Seven
+          </figcaption>
+        </figure>
+
+        <figure>
+          <img
+            src="assets/images/artistExampleEight.jpg"
+            alt="Artist Eight beating a hand-made drum outdoors"
+            class="artistImg"
+          />
+          <figcaption class="artist-name">
+            Artist Eight
+          </figcaption>
+        </figure>
+
+        <figure>
+          <img
+            src="assets/images/artistExampleNine.jpg"
+            alt="Artist Nine seated behind drumset in concert"
+            class="artistImg"
+          />
+          <figcaption class="artist-name">
+            Artist Nine
+          </figcaption>
+        </figure>
+
+        <figure>
+          <img
+            src="assets/images/artistExampleTen.jpg"
+            alt="Artist Ten holding a wireless telephone against their eyes in front of a red wall"
+            class="artistImg"
+          />
+          <figcaption class="artist-name">
+            Artist Ten
+          </figcaption>
+        </figure>
+
+        <figure>
+          <img
+            src="assets/images/artistExampleEleven.jpg"
+            alt="Artist Eleven live in concert"
+            class="artistImg"
+          />
+          <figcaption class="artist-name">
+            Artist Eleven
+          </figcaption>
+        </figure>
+
+        <figure>
+          <img
+            src="assets/images/artistExampleTwelve.jpg"
+            alt="Artist Twelve walking outdoors"
+            class="artistImg"
+          />
+          <figcaption class="artist-name">
+            Artist Twelve
+          </figcaption>
+        </figure>
+      </article>
     </main>
     <footer>
-      <p>Copyright Music Vikings 2020. All Rights Reserved</p>
+      <p>Copyright &#64; Music Vikings 2020. All Rights Reserved</p>
     </footer>
-
     <script
       src="https://code.jquery.com/jquery-3.4.0.min.js"
       integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg="

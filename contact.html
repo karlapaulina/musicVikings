@@ -1,9 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!--META TAGS-->
     <meta charset="UTF-8" />
+    <meta name="description" content="Music agency portfolio" />
+    <meta name="keywords" content="music" />
+    <meta name="author" content="Music Vikings" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <!--TITLE-->
+    <title>Music Vikings</title>
+    <!--STYLESHEETS-->
+    <link href="./build/css/style.min.css" type="text/css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
   </head>
-  <body></body>
+  <body>
+    <header>
+      <nav>
+        <div class="mv-logo">
+          <a href="index.html" class="logo"
+            ><img
+              src="./assets/images/musicVikingsLogo.png"
+              alt="Music Vikings logo"
+          /></a>
+        </div>
+        <div class="nav-links">
+          <button class="menu-item first-li" id="homeBtn">
+            <i class="fas fa-home"></i>
+          </button>
+          <button class="menu-item">
+            <i class="fas fa-music"></i>
+          </button>
+          <button class="menu-item">
+            <i class="fas fa-shopping-cart"></i>
+          </button>
+          <button class="menu-item">
+            <i class="fab fa-facebook"></i>
+          </button>
+          <button class="menu-item">
+            <i class="fab fa-twitter"></i>
+          </button>
+          <button class="menu-item" id="contactBtn">
+            <i class="fas fa-envelope"></i>
+          </button>
+        </div>
+        <div class="burger">
+          <button class="hamburger hamburger--spring" type="button">
+            <span class="hamburger-box">
+              <span class="hamburger-inner"></span>
+            </span>
+          </button>
+        </div>
+      </nav>
+    </header>
+    <main class="content-container">
+      <h1 class="pageTitle">Contact Us</h1>
+      <form id="contact-form">
+        <!--First Name-->
+        <input
+          type="text"
+          name="fName"
+          id="fName"
+          value="Your First Name"
+          required
+        />
+        <!--Family Name-->
+        <input
+          type="text"
+          name="lName"
+          id="lName"
+          value="Your Family Name"
+          required
+        />
+        <!--E-mail-->
+        <input
+          type="email"
+          name="email"
+          id="email"
+          value="Your E-mail Address"
+          required
+        />
+        <div class="checkbox">
+          <input type="checkbox" id="email-subscribe" name="email-subscribe" />
+          <label for="email-subscribe"
+            >I want to suscribe to the newsletter</label
+          >
+        </div>
+        <!--Message-->
+        <textarea
+          id="message"
+          name="message"
+          placeholder="Your Message here"
+          required
+        >
+Your Message Here</textarea
+        >
+        <!--Reset Message-->
+        <button type="reset" id="reset-btn">Reset</button>
+        <!--Send Message-->
+        <button type="submit" id="submit-btn">Send</button>
+      </form>
+    </main>
+    <footer>
+      <p>Copyright &#64; Music Vikings 2020. All Rights Reserved</p>
+    </footer>
+
+    <script
+      src="https://code.jquery.com/jquery-3.4.0.min.js"
+      integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg="
+      crossorigin="anonymous"
+    ></script>
+    <script src="/build/js/index.min.js"></script>
+  </body>
 </html>

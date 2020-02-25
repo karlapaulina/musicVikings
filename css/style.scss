@@ -1,8 +1,455 @@
-@import "variables";
 @import "reset";
+@import "variables";
 @import "fonts";
+@import "hamburgers";
+
+/* MOBILE LAYOUT */
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+}
 
 body {
-  background: pink;
-  color: black;
+  background-image: $color__background;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/* HEADER */
+header {
+  display: inline-block;
+  width: 100%;
+  height: 80px;
+  position: fixed;
+  z-index: 1;
+  top: 0px;
+  background-image: none;
+  background-color: $color__container-bg;
+  -webkit-box-shadow: 0px 3px 4px 0px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0px 3px 4px 0px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 3px 4px 0px rgba(0, 0, 0, 0.3);
+
+  /* NAV */
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 8vh;
+    padding: 10px 15px;
+    width: 100%;
+
+    .mv-logo {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      width: 50%;
+      a img {
+        width: 50%;
+        height: auto;
+      }
+    }
+
+    .nav-links {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: center;
+      position: absolute;
+      right: 0px;
+      height: 92vh;
+      top: 8vh;
+      z-index: 1;
+      width: 50%;
+      transform: translateX(100%);
+      transition: transform 0.5s ease-in;
+      background-color: $color__container-bg;
+      -webkit-box-shadow: -3px 0px 5px 0px rgba(0, 0, 0, 0.4);
+      -moz-box-shadow: -3px 0px 5px 0px rgba(0, 0, 0, 0.4);
+      box-shadow: -3px 0px 5px 0px rgba(0, 0, 0, 0.4);
+
+      .menu-item {
+        color: #fff;
+        @include font__main;
+        font-size: $base__font-size * 2;
+        cursor: pointer;
+        border: 3px solid $color__text-dark;
+        border-radius: 50%;
+        width: 75px;
+        height: 75px;
+        text-align: center;
+        line-height: 75px;
+
+        & :visited {
+          color: $color__link-visited;
+        }
+        &:hover {
+          color: $color__link-hover;
+        }
+        &:active {
+          color: rgb(143, 143, 143);
+          outline: thin dotted;
+        }
+      }
+      /* Targeting each individual button using nth-child so that the colour isn't dependent on a specific class */
+      .first-li {
+        background-image: $color__gradient-one;
+      }
+      :nth-child(2) {
+        background-image: $color__gradient-two;
+      }
+      :nth-child(3) {
+        background-image: $color__gradient-three;
+      }
+      :nth-child(4) {
+        background-image: $color__gradient-four;
+      }
+
+      :nth-child(5) {
+        background-image: $color__gradient-five;
+      }
+
+      :nth-child(6) {
+        background-image: $color__gradient-six;
+      }
+    }
+
+    .burger {
+      display: block;
+      cursor: pointer;
+    }
+
+    .nav-active {
+      transform: translateX(0%);
+    }
+  }
+}
+
+/* HOME PAGE MAIN CONTENT */
+
+.content-container {
+  background-color: $color__container-bg;
+  border: $solid__border;
+  width: 90%;
+  margin: 120px auto 0px;
+  padding-bottom: 30px;
+
+  .pageTitle {
+    @include font__accent-bold-italic;
+    font-size: $base__font-size * 3;
+    color: $color__text-dark;
+    text-align: center;
+    margin: 30px 0;
+  }
+
+  /* Using grid for the content as it allows for seamless responsiveness */
+
+  .artist-grid {
+    display: grid;
+    grid-template-rows: auto;
+    justify-items: center;
+    grid-gap: 30px;
+
+    figure {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      img {
+        width: 90%;
+      }
+
+      .artist-name {
+        @include font__main;
+        font-size: $base__font-size * 1.5;
+        text-transform: uppercase;
+        font-style: italic;
+        letter-spacing: $base__letter-spacing;
+        color: $color__text-dark;
+        padding-top: 10px;
+      }
+    }
+  }
+  /* CONTACT PAGE MAIN CONTENT */
+  #contact-form {
+    display: grid;
+    grid-row-gap: 25px;
+    margin: 30px 0;
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+    justify-items: center;
+
+    #fName,
+    #lName,
+    #email {
+      width: 90%;
+      height: 40px;
+      padding: 10px;
+      @include font__main;
+      color: grey;
+      font-size: $base__font-size;
+      -webkit-box-shadow: 0px 3px 4px 0px rgba(0, 0, 0, 0.3);
+      -moz-box-shadow: 0px 3px 4px 0px rgba(0, 0, 0, 0.3);
+      box-shadow: 0px 3px 4px 0px rgba(0, 0, 0, 0.3);
+    }
+
+    .checkbox {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      width: 250px;
+      input[type="checkbox"] {
+        -webkit-box-shadow: 0px 3px 4px 0px rgba(0, 0, 0, 0.3);
+        -moz-box-shadow: 0px 3px 4px 0px rgba(0, 0, 0, 0.3);
+        box-shadow: 0px 3px 4px 0px rgba(0, 0, 0, 0.3);
+      }
+    }
+
+    #message {
+      width: 90%;
+      height: 150px;
+      resize: none;
+      padding: 10px;
+      @include font__main;
+      color: grey;
+      font-size: $base__font-size;
+      -webkit-box-shadow: 0px 3px 4px 0px rgba(0, 0, 0, 0.3);
+      -moz-box-shadow: 0px 3px 4px 0px rgba(0, 0, 0, 0.3);
+      box-shadow: 0px 3px 4px 0px rgba(0, 0, 0, 0.3);
+    }
+
+    #reset-btn {
+      width: 60%;
+      padding: 10px;
+      @include font__main;
+      font-weight: 600;
+      text-transform: uppercase;
+      background: dimgray;
+      color: #fff;
+      font-size: $base__font-size * 1.5;
+      letter-spacing: $base__letter-spacing * 1.5;
+      &:hover {
+        background: darkred;
+      }
+    }
+
+    #submit-btn {
+      width: 60%;
+      padding: 10px;
+      @include font__main;
+      font-weight: 600;
+      text-transform: uppercase;
+      background: $color__brand;
+      color: #fff;
+      font-size: $base__font-size * 1.5;
+      letter-spacing: $base__letter-spacing * 1.5;
+      text-transform: uppercase;
+      &:hover {
+        background: darkgreen;
+      }
+    }
+  }
+}
+
+/* FOOTER */
+
+footer {
+  display: flex;
+  justify-content: center;
+  margin: 50px auto 20px;
+  width: 90%;
+  @include font__main;
+  font-size: $base__font-size;
+  color: $color__text-light;
+}
+
+/* Tablet breakpoint */
+
+@media screen and (min-width: 600px) {
+  /* HEADER - added the background image along with a gradient to help with readability */
+  header {
+    display: grid;
+    border: $solid__border;
+    margin: 10px auto 20px;
+    position: relative;
+    width: 90%;
+    height: 150px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url(../../assets/images/headerArtistBanner.jpg);
+    background-position: 50% 60%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: $color__container-bg;
+
+    nav {
+      flex-direction: column;
+      width: 100%;
+
+      .mv-logo {
+        align-self: flex-start;
+        width: 60%;
+        a img {
+          width: 50%;
+          height: auto;
+        }
+      }
+
+      .nav-links {
+        padding-top: 100px;
+        align-self: flex-end;
+        flex-direction: row;
+        top: auto;
+        height: auto;
+        width: 100%;
+        transform: none;
+        transition: none;
+        background-color: transparent;
+        -webkit-box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.4);
+        -moz-box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.4);
+        box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.4);
+        .menu-item {
+          font-size: $base__font-size * 2.5;
+          border: 3px solid $color__text-light;
+        }
+      }
+      /* Disabling mobile menu */
+      .burger {
+        display: none;
+      }
+
+      .nav-active {
+        transform: none;
+      }
+    }
+  }
+
+  .content-container {
+    margin: 75px auto 0;
+  }
+}
+
+/* Tablet breakpoint - Changing layout to two-column */
+
+@media screen and (min-width: 800px) {
+  .content-container {
+    .artist-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 50%);
+      grid-gap: 20px 0px;
+
+      figure {
+        img {
+          &:hover {
+            filter: gray; /* IE5+ */
+            -webkit-filter: grayscale(1); /* Webkit Nightlies & Chrome Canary */
+          }
+        }
+        .artist-name {
+          font-size: $base__font-size;
+        }
+      }
+    }
+  }
+}
+
+/* Desktop/Tablet breakpoint -changing layout to three column */
+
+@media screen and (min-width: 960px) {
+  header {
+    nav {
+      align-content: flex-end;
+      .nav-links {
+        padding-top: 85px;
+        justify-content: space-evenly;
+        width: 75%;
+        .menu-item {
+          font-size: $base__font-size * 3;
+          width: 90px;
+          height: 90px;
+          line-height: 90px;
+        }
+      }
+    }
+  }
+  .content-container {
+    .artist-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 33%);
+      grid-gap: 20px 0px;
+    }
+    #contact-form {
+      grid-template-columns: 40% 30% 15% 15%;
+      grid-template-rows: repeat(7, 1fr);
+
+      #fName,
+      #lName,
+      #email,
+      .checkbox {
+        grid-column: 1 / 2;
+      }
+
+      #fName {
+        grid-row: 1 / 2;
+      }
+
+      #LName {
+        grid-row: 2 / 3;
+      }
+
+      #email {
+        grid-row: 3 /4;
+      }
+
+      .checkbox {
+        grid-row: 4 / 5;
+      }
+
+      #message {
+        grid-column: 2 / 5;
+        grid-row: 1 / 6;
+        height: 275px;
+      }
+
+      #reset-btn {
+        grid-column: 3 / 4;
+        grid-row: 6 / 8;
+        width: 90%;
+        padding: 5px;
+        height: 40px;
+        font-size: $base__font-size;
+      }
+
+      #submit-btn {
+        grid-column: 4 / 5;
+        grid-row: 6 / 8;
+        width: 90%;
+        padding: 5px;
+        height: 40px;
+        font-size: $base__font-size;
+      }
+    }
+  }
+}
+
+/* Desktop breakpoint*/
+
+@media screen and (min-width: 1240px) {
+  .content-container {
+    .artist-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 25%);
+      grid-gap: 20px 0px;
+
+      figure {
+        .artist-name {
+          font-size: $base__font-size;
+        }
+      }
+    }
+  }
 }
